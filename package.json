@@ -1,6 +1,6 @@
 {
-	"name": "gulp-potomo-js",
-	"version": "1.0.1",
+	"name": "gulp-potomo",
+	"version": "1.1.0",
 	"description": "A Gulp plugin to compile .po files into binary .mo files written in JavaScript only.",
 	"main": "index.js",
 	"scripts": {
