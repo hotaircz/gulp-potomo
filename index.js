@@ -52,15 +52,18 @@ module.exports = (opts) => {
 
     totalFiles++
 
-    log(PLUGIN_NAME + ':', chalk.green('✔ ') + file.relative + chalk.gray(` successfully compiled`));
-
+    if (opts.verbose) {
+    	log(PLUGIN_NAME + ':', chalk.green('✔ ') + file.relative + chalk.gray(` successfully compiled`));
+    }
     cb(null, file)
 
 	}, cb => {
 
-		let msg = `Compiled ${totalFiles} translation ${plur('file', totalFiles)}`
+    		if (opts.verbose) {
+			let msg = `Compiled ${totalFiles} translation ${plur('file', totalFiles)}`
 
-		log(PLUGIN_NAME + ':', msg)
+			log(PLUGIN_NAME + ':', msg)
+		}
 		cb()
 
 	})
